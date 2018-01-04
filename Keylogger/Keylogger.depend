@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1514999393 source:d:\projects\hackaccess\keylogger\main.cpp
+	<iostream>
+	<Windows.h>
+
