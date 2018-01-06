@@ -24,17 +24,17 @@ namespace Base64
         s += SALT1 ;
         s = base64_encode(s);
         s = SALT2 + SALT3 +SALT1;
-        s = base64_encode(s0);
+        s = base64_encode(s);
         s.insert(1,"L");
         s.insert (7,"m"); // inserting m to its seventh position
         // it is not a base64 string until SALT characters are removed . We need to take out our SALT keys to make it base64 string to decrypt it
         return s;
     }
 
-    const std::string &BASE64_CODES="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/"
+    const std::string &BASE64_CODES="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/";
     std::string base64_encode(const std::string &s)
     {
-        std::string r/et; //output string
+        std::string ret; //output string
         int val = 0; //index to math to table
         int bits = -6;  // group of 6 bits
         const unsigned int b63 = 0x3F ; //hexadecimals 63
@@ -45,18 +45,19 @@ namespace Base64
             bits +=8;
             while(bits >=0)
             {
-                ret.push_back (BASE64_CODES[(val<<bits) &b63 } ] );
+                ret.push_back (BASE64_CODES[(val<<bits) &b63  ] );
                 bits -= 6;
             }
 
         }
 
         if (bits>-6)
-            { ret.push_back (BASE64_CODES[( ( val<<8) >> (bits + 8 )) & b63 ]) };
+            { ret.push_back (BASE64_CODES[( ( val<<8) >> (bits + 8 )) & b63 ]);
+            }
 
         while (ret.size() % 4)
         {
-                ret.push_back("=");
+                ret.push_back('=');
 
         return ret;
         }

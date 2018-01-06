@@ -3,7 +3,24 @@
 	<iostream>
 	<Windows.h>
 
-1515045930 source:d:\projects\hackaccess\repos\keylogger\main.cpp
+1515214928 source:d:\projects\hackaccess\repos\keylogger\main.cpp
 	<iostream>
-	<Windows.h>
+	<windows.h>
+	"Helper.h"
+	"KeyConstants.h"
+	"Base64.h"
+
+1515215795 d:\projects\hackaccess\repos\keylogger\helper.h
+	<ctime>
+	<string>
+	<sstream>
+	<fstream>
+
+1515215837 d:\projects\hackaccess\repos\keylogger\keyconstants.h
+	<map>
+	<string>
+
+1515215466 d:\projects\hackaccess\repos\keylogger\base64.h
+	<vector>
+	<string>
 
