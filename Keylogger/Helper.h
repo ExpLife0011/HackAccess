@@ -12,7 +12,7 @@ namespace Helper{
     struct DateTime{ //structs are users defined type, they are pretty much like classes;
                         //classes are just structs iwth functions
                             //structs by default are public
-    DateTime()[
+    DateTime(){
         time_t ms;  //time_t is a type for system time
         time (&ms); //time is a function from ctime included in header which returns system time
 
@@ -24,7 +24,7 @@ namespace Helper{
         M = info ->tm_min;
         H = info-> tm_hour;
         S = info->tm_sec;
-    ]
+    }
     DateTime(int D, int m , int y, int M,int H, int S   ) : D(D), m(m), y(y),M(M),H(H), S(S) {}
     DateTime (int D, int m , int y): D(D), m(m), y(y),M(0),H(0), S(0 {}
 
