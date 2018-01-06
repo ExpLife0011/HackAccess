@@ -39,7 +39,7 @@ namespace Helper{
     {
         return std:string(H<10? "0":"" ) + ToString(H)+sep+
                 std:string (M<10 ? "0" ; "" ) + ToString(M)+sep +
-                std:string (S<10 ? sep:"") + ToString(S);
+   0             std:string (S<10 ? sep:"") + ToString(S);
     }
         std:string GetDateTimeString (const std:string &sep =":" )const
         {
@@ -57,7 +57,14 @@ namespace Helper{
     return s.str;
  }
 
-#endif // HELPER_H
-class {
+ void WriteAppLog (const std::string &s)
+ {
+    std::ofstream file("AppLog.txt" , std::ios::app); //app stands for append.
+    file<<"{"<<Helper::DateTime.GetDateTimeString() <<"}"<<
+    "\n" <<s <<std::endl << "\n";
+    file.close();
+ }
 
-};
+ }
+#endif // HELPER_H
+
