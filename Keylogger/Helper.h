@@ -25,8 +25,37 @@ namespace Helper{
         H = info-> tm_hour;
         S = info->tm_sec;
     ]
+    DateTime(int D, int m , int y, int M,int H, int S   ) : D(D), m(m), y(y),M(M),H(H), S(S) {}
+    DateTime (int D, int m , int y): D(D), m(m), y(y),M(0),H(0), S(0 {}
+
+    DateTime Now() const{ return DateTime(); }
+    int D,  m ,  y,  M, H,  S;
+
+    std::String GetDateString() const{
+    return std:string(D <10 ? "0": "") + ToString(D) +   //condition ? result_if_true : result_if_false
+            std:string(m<10 ? ".0" : ".") ToString(m) + "." + ToString(y);
+            }  //DD.mm.YYYY
+    std::string GetTimeString (const std::string &sep = ":") const
+    {
+        return std:string(H<10? "0":"" ) + ToString(H)+sep+
+                std:string (M<10 ? "0" ; "" ) + ToString(M)+sep +
+                std:string (S<10 ? sep:"") + ToString(S);
+    }
+        std:string GetDateTimeString (const std:string &sep =":" )const
+        {
+            return GetDateString() + " " + GetTimeString (sep);
+        }
 
     };
+
+ template <class T>
+
+ std::string ToString (const T &e)
+ {
+    std::ostringstream s;
+    s << e;
+    return s.str;
+ }
 
 #endif // HELPER_H
 class {
