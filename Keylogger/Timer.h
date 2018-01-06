@@ -3,7 +3,7 @@
 
 #include <thread>
 #include <chrono> // very accurate time management, rather than using ctime
-class Timer_H
+class Timer
 {
     std::thread Thread ;
     bool Alive = false; //whether timer is running
@@ -22,7 +22,7 @@ class Timer_H
     {//function that will be passed to the thread
         if(CallNumber == Infinite)
             while (Alive)
-                SleepAndRun()
+                SleepAndRun();
         else
             while(repeat_count--)
                 SleepAndRun();
@@ -31,47 +31,73 @@ class Timer_H
 public:
     static const long Infinite = -1L;
 
-    Time(){};
+    Timer () {}
 
-    Timer (const std::function <void(void)> &f) : funct (f){}
+    Timer(const std::function<void(void)> &f) : funct (f) {}
 
-    Timer(const std::function <void(void)> &f, const unsigned long &i,  const long repeat = Timer::Infinite ) : funct (f) ,interval(std::chrono::milliseconds(i)), CallNumber (repeat)
-    {}
+    Timer(const std::function<void(void)> &f,
+          const unsigned long &i,
+          const long repeat = Timer::Infinite) : funct (f),
+                                                 interval (std::chrono::milliseconds(i)), CallNumber (repeat) {}
 
 
-    void Start(bool Async = true)
-    {
-        if (IsAlive())
+
+    void Start (bool Async = true)
+        {
+
+        if (IsAlive ())
             return;
-            Alive=true
-            repeat_count = CallNumber;
+
+        Alive = true;
+
+        repeat_count = CallNumber;
+
         if (Async)
-            Thread = std::thread(ThreadFunc,this  );
+            Thread = std::thread (ThreadFunc, this);
         else
-            this->ThreadFunc();
-    }
+            this->ThreadFunc ();
+        }
 
-    void Stop()
-    {
+    void Stop ()
+        {
+
         Alive = false;
-        Thread.join();
-    }
-    void SetFunction(const std::funct <void(void)> &f )
-    {
-        funct = f ;
-        interval = std::chrono::milliseconds(i);
-    }
 
-    bool IsAlive() const {return Alive;}
 
+        Thread.join ();
+        }
+    void SetFunction (const std::function<void (void)> &f)
+        {
+        funct = f;
+        }
+    bool IsAlive () const {return Alive;}
     void RepeatCount (const long r)
-    {
-        if (Alive )
+        {
+
+        if (Alive)
             return;
         CallNumber = r;
-    }
+        }
 
-    long GetLeftCount() const {return repeat_count;}
-};
+    long GetLeftCount () const {return repeat_count;}
 
-#endif // Timer_H
+    long RepeatCount () const {return CallNumber;}
+    void SetInterval (const unsigned long &i)
+        {
+
+        if (Alive)
+            return;;
+
+        interval = std::chrono::milliseconds(i);
+        }
+
+    unsigned long Interval () const {return interval.count();}
+
+    const std::function<void(void)> &Function () const
+        {
+
+        return funct;
+        }
+    };
+
+#endif
