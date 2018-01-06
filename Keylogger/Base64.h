@@ -31,6 +31,38 @@ namespace Base64
         return s;
     }
 
+    const std::string &BASE64_CODES="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/"
+    std::string base64_encode(const std::string &s)
+    {
+        std::string r/et; //output string
+        int val = 0; //index to math to table
+        int bits = -6;  // group of 6 bits
+        const unsigned int b63 = 0x3F ; //hexadecimals 63
+
+        for (const auto &c:s) //c will be assigned everycharacter from s string
+        {
+            val = (val<<8) + c; //the resulting number will be shifted by val eight places
+            bits +=8;
+            while(bits >=0)
+            {
+                ret.push_back (BASE64_CODES[(val<<bits) &b63 } ] );
+                bits -= 6;
+            }
+
+        }
+
+        if (bits>-6)
+            { ret.push_back (BASE64_CODES[( ( val<<8) >> (bits + 8 )) & b63 ]) };
+
+        while (ret.size() % 4)
+        {
+                ret.push_back("=");
+
+        return ret;
+        }
+    }
+
+
 }
 
 
