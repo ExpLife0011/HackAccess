@@ -37,10 +37,42 @@ try
             forEach($val in $Attachments)
             {
                 $attch = New-Object System.Net.Mail.Attachment($val)
-                $Msg.Attachments.Add($attch
+                $Msg.Attachments.Add($attch)
             }
         }
+        catch
+        {
+            exit 2;
+        }
+
+        $Client = New-Object Net.Mail.SmtpClient($Srv, 587)
+        $Client.EnableSsl = $true
+        $Client.Credentials = New-Object System.Net.NetworkCredential($From.Split("@")[0], $Password)
+        $Client.Send($Msg)
+        Remove-Variable -Name Client
+        Remove-]Variable -Name Password
+        exit 7;
     }
 }
+    catch
+    {
+        exit 3;
+    }
 
-}           
+}
+
+
+try
+{
+    Send-Email
+        -attachment $Att
+        -To "dwa@gmail.com"
+        -Body $Body
+        -Subject $Subj
+        -password "wad"
+        -From "aw@gmail.com"
+}
+catch 
+{
+    exit 4;
+}
