@@ -89,7 +89,7 @@ bool InstallHook()
 
 bool UninstallHook()
 {
-    bool  b = UnhookWindowsHookEx(eHook)    ;
+    BOOL  b = UnhookWindowsHookEx(eHook)    ;
     eHook = NULL;
     return (bool)b;
 }
