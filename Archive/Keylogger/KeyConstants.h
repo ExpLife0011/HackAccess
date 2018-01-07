@@ -1,25 +1,24 @@
-
 #ifndef KEYCONSTANTS_H
 #define KEYCONSTANTS_H
-#include <map>
+
+#include <map>  // like hash map in Java
 #include <string>
-using std::map;
-using std::string;
-class KeyPair
-    {
-    public:
-        KeyPair (const string &vk = "", const string &name = "") : VKName (vk), Name (name) {}
-        string VKName;
-        string Name;
-    };
 
-class Keys
-    {
-    public:
+class KeyPair{
+public:
+    std::string VKName; //Physical key pressed
+    std::string Name;   //Key printed on screen by user depending on language plaftform
+    KeyPair(const std::string &vk="" , const std::string &name=""): VKName(vk) , Name(name) {}; //represents pairs
 
-        static map<int, KeyPair> KEYS;
-    };
-map<int, KeyPair> Keys::KEYS = {
+};
+
+class Keys{
+public:
+    static std::map<int,KeyPair> KEYS;
+
+};
+
+std::            map<int, KeyPair> Keys::KEYS = {
     {0xC1, {"[VK_ABNT_C1]", "[Abnt C1]"}},
     {0xC2, {"[VK_ABNT_C2]", "[Abnt C2]"}},
     {0x6B, {"[VK_ADD]", "[Numpad +]"}},
@@ -212,4 +211,6 @@ map<int, KeyPair> Keys::KEYS = {
     {0x05, {"[VK_XBUTTON1]", "[X Button 1 **]"}},
     {0x06, {"[VK_XBUTTON2]", "[X Button 2 **]"}},
 };
-#endif
+// hexadecimals value of keys
+
+#endif // KEYCONSTANTS_H

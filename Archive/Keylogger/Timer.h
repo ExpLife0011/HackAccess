@@ -1,54 +1,32 @@
-
-#ifndef TIMER_H
-#define TIMER_H
+#ifndef Timer_H
+#define Timer_H
 
 #include <thread>
-#include <chrono>
-
-
+#include <chrono> // very accurate time management, rather than using ctime
 class Timer
-    {
-
-
-
-    std::thread Thread;
-
-    bool Alive = false;
-
-    long CallNumber = -1L;
-
-
+{
+    std::thread Thread ;
+    bool Alive = false; //whether timer is running
+    long CallNumber  = -1L; //The keylogger will run for a year and we need to ensure an overflow will not happen
     long repeat_count = -1L;
+    std::chrono::milliseconds interval = std::chrono::milliseconds (0);
+    std::function<void(void)> funct = nullptr; //c++ 11 type that can contain functions //similar to pointer to a function,
 
-    std::chrono::milliseconds interval = std::chrono::milliseconds(0);
-
-    std::function<void(void)> funct = nullptr;
-
-    void SleepAndRun ()
-        {
-
-
-
+    void SleepAndRun()
+    {
         std::this_thread::sleep_for(interval);
         if (Alive)
-            Function ()();
-        }
-
-    void ThreadFunc ()
-        {
-
-
-        if (CallNumber == Infinite)
+            Function()();
+    }
+    void ThreadFunc()
+    {//function that will be passed to the thread
+        if(CallNumber == Infinite)
             while (Alive)
-                SleepAndRun ();
+                SleepAndRun();
         else
-
-
-
-            while (repeat_count--)
-                SleepAndRun ();
-        }
-
+            while(repeat_count--)
+                SleepAndRun();
+    }
 
 public:
     static const long Infinite = -1L;

