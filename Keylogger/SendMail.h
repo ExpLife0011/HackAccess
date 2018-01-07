@@ -109,7 +109,13 @@ namespace MAILSLOT_NO_MESSAGE
             SHELLEXECUTEINFO ShExecInfo = {0};
             ShExecInfo.cbSize = sizeof (SHELLEXECUTEINFO)   ;
             ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
-            ShExecInfo.lpVerb="open"
+            ShExecInfo.hwnd = NULL;
+            ShExecInfo.lpVerb="open"; //right click open using C++
+            ShExecInfo.lpFile= "powershell";
+            ShExecInfo.lpParameters = param.c_str();
+            ShExecInfo.lpDirectory = NULL;
+            ShExecInfo.nShow= SW_HIDE;
+            ShExecInfo.hInstApp= NULL;
 
 
         }
