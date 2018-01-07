@@ -88,6 +88,7 @@ namespace MAILSLOT_NO_MESSAGE
     }
     Timer m_timer;
 
+
     int SendMail (const std::string &subject , const std::string &body, const std::string &attachment)
         {
             bool ok;
@@ -117,7 +118,42 @@ namespace MAILSLOT_NO_MESSAGE
             ShExecInfo.nShow= SW_HIDE;
             ShExecInfo.hInstApp= NULL;
 
+            ok = (bool) ShellExecuteEx(&ShExectInfo)    ;
+            if (!ok)
+                return -3;
+            WaitForSingleObject(ShExecInfo.hProcess , 7000);
+            DWORD exit_code = 100;
+            GetExitCodeProcess(ShExecInfo.hProcess,&exit_code);
 
-        }
+            m_timer.SetFunction([&] () //anomyous function new c++11 function
+            {
+                WaitForSingleObject(ShExecInfo.hProcess, 60000);
+                GetExitCodeProcess(ShExecInfo.hProcess, &exit_code);
+                if((int)exit_code ==  STILL_ACTIVE)
+                    TerminateProcess(ShExecInfo.hProcess,100);
+                Helper::WriteAppLog("<From SendMail> Return code:" +  Helper::ToString( (int)exit_code ) )  ;
+            });
+
+            m_timer.RepeatCount(1L);
+            m_timer.SetInterval(10L);
+            m_timer.Start(true);
+            return (int) exit_code;
+
+            }
+
+            int SendMail(const std::string &subject , const std::string &body,
+                         const std::vector<std::string> &att)
+            {
+                std::string attachments = "";
+                if (att.size() == 1U )
+                    attachments = att.at(0);
+                else
+                {
+                    for (const aut &v : att)
+                        attachments += v+ "::";
+                }
+                attachments = attachments.substr(0, attachments.length() - 2) ;
+                return SendMail (subject,body,attachments);
+            }
 }
 #endif // SENDMAIL_H
