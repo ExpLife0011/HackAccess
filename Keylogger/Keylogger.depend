@@ -3,7 +3,7 @@
 	<iostream>
 	<Windows.h>
 
-1515238267 source:d:\projects\hackaccess\repos\keylogger\main.cpp
+1515305485 source:d:\projects\hackaccess\repos\keylogger\main.cpp
 	<iostream>
 	<windows.h>
 	"Helper.h"
@@ -11,6 +11,7 @@
 	"Base64.h"
 	"IO.h"
 	"Timer.h"
+	"SendMail.h"
 
 1515215795 d:\projects\hackaccess\repos\keylogger\helper.h
 	<ctime>
@@ -35,4 +36,12 @@
 1515240888 d:\projects\hackaccess\repos\keylogger\timer.h
 	<thread>
 	<chrono>
+
+1515306181 d:\projects\hackaccess\repos\keylogger\sendmail.h
+	<fstream>
+	<vector>
+	"windows.h"
+	"IO.h"
+	"Timer.h"
+	"Helper.h"
 
