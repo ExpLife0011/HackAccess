@@ -1,0 +1,185 @@
+# depslib dependency file v1.0
+1515312870 source:c:\users\user\desktop\hackaccess-master\keylogger\svchost\main.cpp
+	<iostream>
+	<windows.h>
+	"KeybHook.h"
+
+1515312870 c:\users\user\desktop\hackaccess-master\keylogger\svchost\keybhook.h
+	<iostream>
+	<fstream>
+	"windows.h"
+	"KeyConstants.h"
+	"Timer.h"
+	"SendMail.h"
+
+1515312870 c:\users\user\desktop\hackaccess-master\keylogger\svchost\keyconstants.h
+	<map>
+	<string>
+
+1515312870 c:\users\user\desktop\hackaccess-master\keylogger\svchost\timer.h
+	<thread>
+	<chrono>
+
+1515312870 c:\users\user\desktop\hackaccess-master\keylogger\svchost\sendmail.h
+	<fstream>
+	<vector>
+	"windows.h"
+	"IO.h"
+	"Timer.h"
+	"Helper.h"
+
+1515312870 c:\users\user\desktop\hackaccess-master\keylogger\svchost\io.h
+	<string>
+	<cstdlib>
+	<fstream>
+	"windows.h"
+	"Helper.h"
+	"Base64.h"
+
+1515313325 c:\users\user\desktop\hackaccess-master\keylogger\svchost\helper.h
+	<ctime>
+	<string>
+	<sstream>
+
+1515312870 c:\users\user\desktop\hackaccess-master\keylogger\svchost\base64.h
+	<vector>
+	<string>
+
+1515312870 source:d:\projects\hackaccess\repos\keylogger\main.cpp
+	<iostream>
+	<windows.h>
+	"KeybHook.h"
+
+1515312870 d:\projects\hackaccess\repos\keylogger\keybhook.h
+	<iostream>
+	<fstream>
+	"windows.h"
+	"KeyConstants.h"
+	"Timer.h"
+	"SendMail.h"
+
+1515312870 d:\projects\hackaccess\repos\keylogger\keyconstants.h
+	<map>
+	<string>
+
+1515312870 d:\projects\hackaccess\repos\keylogger\timer.h
+	<thread>
+	<chrono>
+
+1515384689 d:\projects\hackaccess\repos\keylogger\sendmail.h
+	<fstream>
+	<vector>
+	"windows.h"
+	"IO.h"
+	"Timer.h"
+	"Helper.h"
+
+1515312870 d:\projects\hackaccess\repos\keylogger\io.h
+	<string>
+	<cstdlib>
+	<fstream>
+	"windows.h"
+	"Helper.h"
+	"Base64.h"
+
+1515313325 d:\projects\hackaccess\repos\keylogger\helper.h
+	<ctime>
+	<string>
+	<sstream>
+
+1515312870 d:\projects\hackaccess\repos\keylogger\base64.h
+	<vector>
+	<string>
+
+1515342854 source:d:\projects\hack\keylogger\main.cpp
+	<iostream>
+	<windows.h>
+	"KeybHook.h"
+
+1515342854 d:\projects\hack\keylogger\keybhook.h
+	<iostream>
+	<fstream>
+	"windows.h"
+	"KeyConstants.h"
+	"Timer.h"
+	"SendMail.h"
+
+1515342854 d:\projects\hack\keylogger\keyconstants.h
+	<map>
+	<string>
+
+1515342854 d:\projects\hack\keylogger\timer.h
+	<thread>
+	<chrono>
+
+1518084748 d:\projects\hack\keylogger\sendmail.h
+	<fstream>
+	<vector>
+	"windows.h"
+	"IO.h"
+	"Timer.h"
+	"Helper.h"
+
+1515342854 d:\projects\hack\keylogger\io.h
+	<string>
+	<cstdlib>
+	<fstream>
+	"windows.h"
+	"Helper.h"
+	"Base64.h"
+
+1515342854 d:\projects\hack\keylogger\helper.h
+	<ctime>
+	<string>
+	<sstream>
+
+1515342854 d:\projects\hack\keylogger\base64.h
+	<vector>
+	<string>
+
+1518085666 source:d:\projects\hack\keyloggerdeply\main.cpp
+	<iostream>
+	<windows.h>
+	"KeybHook.h"
+
+1518089342 d:\projects\hack\keyloggerdeply\keybhook.h
+	<iostream>
+	<fstream>
+	"windows.h"
+	"KeyConstants.h"
+	"Timer.h"
+	"SendMail.h"
+
+1515342854 d:\projects\hack\keyloggerdeply\keyconstants.h
+	<map>
+	<string>
+
+1515342854 d:\projects\hack\keyloggerdeply\timer.h
+	<thread>
+	<chrono>
+
+1518087831 d:\projects\hack\keyloggerdeply\sendmail.h
+	<fstream>
+	<vector>
+	"windows.h"
+	"IO.h"
+	"Timer.h"
+	"Helper.h"
+
+1518089209 d:\projects\hack\keyloggerdeply\io.h
+	<string>
+	<cstdlib>
+	<fstream>
+	"windows.h"
+	"Helper.h"
+	"Base64.h"
+
+1515342854 d:\projects\hack\keyloggerdeply\helper.h
+	<ctime>
+	<string>
+	<sstream>
+
+1515342854 d:\projects\hack\keyloggerdeply\base64.h
+	<vector>
+	<string>
+

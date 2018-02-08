@@ -1,0 +1,6 @@
+[07.01.2018 16:14:40]
+Hook started... Timer started
+
+[07.01.2018 16:16:45]
+<From SendMail> Return code: 12
+

